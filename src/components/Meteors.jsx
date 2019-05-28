@@ -4,7 +4,7 @@ import React from "react";
 const Meteors = (props) => (
   <div className="container">
     {/* <p>{`Viewing ${props.resultsFound ? props.offset+1 : 0}-${props.offset+props.numberOfResultsOnPage} of ${props.resultsFound} results found.`}</p> */}
-    <table className="table">
+    {props.resultsFound !== 0 ? <table className="table">
       <thead className="bg-warning">
         <tr>
           <th scope="col">Name</th>
@@ -35,7 +35,8 @@ const Meteors = (props) => (
               );
             })}
       </tbody>
-    </table>
+    </table> : <h1 className="notFound">Not Found! Try again.</h1>}
+    
     
   </div>
 );
